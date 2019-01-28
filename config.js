@@ -1,11 +1,12 @@
 module.exports = {
     port:3000,
-    name:'李湘华博客',
+    name:'Saihong Xiao personal website.',
     describe:'这是李湘华的个人网站',
-    mongodb: 'mongodb://localhost:27017/myblog',
+   // mongodb: 'mongodb://localhost:27017/myblog',
+    mongodb:'mongodb://<dbuser>:<dbpassword>@ds113855.mlab.com:13855/myblog',
     dbInfo:{
-        success:'数据库连接成功',
-        error:'数据库连接失败'
+        success:'database connection succeed!!!!',
+        error:'database connection failed!!!!'
     },
     pageSize:10,
     showPages:7,
