@@ -3,7 +3,8 @@ module.exports = {
     name:'Saihong Xiao personal website.',
     describe:'这是李湘华的个人网站',
    // mongodb: 'mongodb://localhost:27017/myblog',
-    mongodb:'mongodb://<dbuser>:<dbpassword>@ds113855.mlab.com:13855/myblog',
+   // mongodb:'mongodb://<dbuser>:<dbpassword>@ds113855.mlab.com:13855/myblog',
+    mongodb: 'mongodb://myblog:Xshseneca1*@ds113855.mlab.com:13855/myblog',
     dbInfo:{
         success:'database connection succeed!!!!',
         error:'database connection failed!!!!'
