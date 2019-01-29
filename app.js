@@ -71,9 +71,10 @@ app.use(function(err, req, res, next) {
 });
 
 let server = http.createServer(app);
-let PORT = process.env.PORT || cfg.port;
+//let PORT = process.env.PORT || cfg.port;
 
-server.listen(PORT, ()=>{
-    console.log(`Server started at port: ${PORT}`);
-});
+// server.listen(PORT, ()=>{
+//     console.log(`Server started at port: ${PORT}`);
+// });
 
+server.listen(process.env.PORT || 3000 );
