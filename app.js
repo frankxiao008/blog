@@ -47,9 +47,6 @@ app.use(function(req,res,next){
     next();
 });
 
-app.get('/', (res,req)=>{
-    res.send('Worked!');
-})
 
 
 app.use('/',webRouter);
