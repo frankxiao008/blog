@@ -10,7 +10,7 @@ const cookieParser = require('cookie-parser');
 const MongoStore = require('connect-mongo')(session);
 const bodyParser = require('body-parser');
 mongoose.Promise = global.Promise;
-const favicon = require('express-favicon');
+//const favicon = require('express-favicon');
 let checkMobile = require('./controller/checkMobile');
 
 
