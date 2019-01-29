@@ -36,7 +36,7 @@ app.use(session({
 
 
 app.use(express.static(path.join(__dirname,'public')));
-app.use(favicon(path.join(__dirname,'public','images','favicon.ico')))
+//app.use(favicon(path.join(__dirname,'public','images','favicon.ico')))
 app.set('views',path.join(__dirname,'views'));
 app.set('view engine','ejs');
 
@@ -68,9 +68,7 @@ app.use(function(err, req, res, next) {
 let server = http.createServer(app);
 let PORT = process.env.port || cfg.port;
 
-server.listen(PORT);
-server.on('listening',function () {
-    let host = server.address().address;
-    let port = server.address().port;
-    console.log('网站己启动，请访问： http://%s:%s',host,port)
+server.listen(PORT, ()=>{
+    console.log(`Server started at port: ${PORT}`);
 });
+
