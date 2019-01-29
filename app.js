@@ -66,7 +66,9 @@ app.use(function(err, req, res, next) {
 });
 
 let server = http.createServer(app);
-server.listen(cfg.port,'127.0.0.1');
+let PORT = process.env.port || cfg.port;
+
+server.listen(PORT);
 server.on('listening',function () {
     let host = server.address().address;
     let port = server.address().port;
