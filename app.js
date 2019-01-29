@@ -71,7 +71,7 @@ app.use(function(err, req, res, next) {
 });
 
 let server = http.createServer(app);
-let PORT = process.env.port || cfg.port;
+let PORT = process.env.PORT || cfg.port;
 
 server.listen(PORT, ()=>{
     console.log(`Server started at port: ${PORT}`);
