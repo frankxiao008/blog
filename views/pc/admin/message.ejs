@@ -35,13 +35,13 @@
                     <td><%= message.create_at %></td>
                     <td><%= message.reply %></td>
                     <td><%= message.reply_at %></td>
-                    <td><a class="art-operate art-modify" href="/admin/message/edit/<%= message._id %>">回复</a><span class="art-operate message-delete" data-id="<%= message._id %>">删除</span></td>
+                    <td><a class="art-operate art-modify" href="/admin/message/edit/<%= message._id %>">Reply</a><span class="art-operate message-delete" data-id="<%= message._id %>">删除</span></td>
                 </tr>
                 <% }) %>
                 </tbody>
             </table>
             <%  }else{ %>
-                <div class="nothasinfo">暂无留言</div>
+                <div class="nothasinfo">No comments yet</div>
             <% } %>
 
         </div>
