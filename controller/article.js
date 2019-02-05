@@ -103,13 +103,13 @@ exports.message = function(req,res,next){
         };
         let editError = '';
         if (opt.name === '') {
-            editError = '姓名不能是空的。';
+            editError = 'Name cannot be empty.';
         } else if (opt.email === '') {
-            editError = '邮箱不可为空';
+            editError = 'Email cannot be empty.';
         } else if (opt.comment === '') {
-            editError = '留言内容不可为空';
+            editError = 'Comment cannot be empty.';
         }else if(!emailReg.test(opt.email)){
-            editError = '邮箱格式不正确';
+            editError = 'Email format cannot be empty';
         }
         if (editError !== '') {
             res.json({
@@ -121,7 +121,7 @@ exports.message = function(req,res,next){
         messageOperator.addNewMessage(opt).then(function () {
             res.json({
                 state:1,
-                message:'留言成功,请耐心等待回复',
+                message:'Comment has been leaved successfully. wait for reply.',
                 data:{}
             })
         }).catch(function () {
@@ -170,13 +170,13 @@ exports.list = function (req,res,next) {
         });
         pageData.genreString = genre;
         pageData.genres = genres;
-        pageData.pageTitle = '所有文章' + '第' + page + '页';
+        pageData.pageTitle = 'All the articles' + 'the' + page + 'pages';
         for(let i=0;i<genres.length;i++){
             if(genres[i].genreName ===  genre){
                 query.genre = genres[i]._id;
                 pageData.genre = genres[i];
                 pageData.genreString = genres[i].genreName;
-                pageData.pageTitle = genres[i].title + '第' + page + '页';
+                pageData.pageTitle = genres[i].title + 'the' + page + 'pages';
                 break
             }
         }
