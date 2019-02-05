@@ -10,7 +10,7 @@
     <%- include('includes/header') %>
     <div class="content">
         <div class="message-con">
-            <div class="message-t"><i class="iconfont">&#xe62f;</i><span>关于本站</span></div>
+            <div class="message-t"><i class="iconfont">&#xe62f;</i><span>About this website</span></div>
             <div class="message-c">
                 <p>
                     　　Just for fun and make some notes for the front end development.
@@ -38,7 +38,7 @@
                     <input name="email" id="msg-email" type="email" class="msg-input" placeholder="Please input the email...">
                 </div>
                 <div class="meg-item">
-                    <textarea name="comments" id="comments" class="msg-input msg-textarea" onresize="false" placeholder="请输入留言内容..."></textarea>
+                    <textarea name="comments" id="comments" class="msg-input msg-textarea" onresize="false" placeholder="Please input your comments..."></textarea>
                 </div>
                 <div class="meg-item">
                     <button type="button" id="submitmsg" class="submitmsg">Submit</button>
@@ -56,13 +56,13 @@
         var comment = $("#comments").val();
         var editError = '';
         if (name === '') {
-            editError = '姓名不能是空的。';
+            editError = 'The name cannot be empty1';
         } else if (email === '') {
-            editError = '邮箱不能为空';
+            editError = 'Email cannot be empty!';
         } else if (comment === '') {
-            editError = '留言内容不能为空';
+            editError = 'Comment content cannot be empty!';
         }else if(!emailReg.test(email)){
-            editError = '邮箱格式不正确';
+            editError = 'The email address is not correct!';
         }
         if (editError !== '') {
             $('body').LiMask({content:editError});
@@ -85,7 +85,7 @@
             $('body').LiMask({content:result.message});
             $("#msg-name").add("#msg-email").add("#comments").val('');
         }).catch(function () {
-            $('body').LiMask({content:'服务器错误，请稍后重试'});
+            $('body').LiMask({content:'Server error, please try later!'});
         }).always(function () {
             closeBaseMask();
             $("#submitmsg").removeClass('disabled');

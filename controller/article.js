@@ -82,7 +82,7 @@ exports.message = function(req,res,next){
         let pageData = {};
         let queryGenres = genreOperator.getGenreByQuery({});
         Promise.all([queryGenres]).then(function ([genres]) {
-            pageData.pageTitle = '关于本站';
+            pageData.pageTitle = 'About this website';
             pageData.genres = genres;
             pageData.pageSign = 'id-message';
             if(req.isMobile){

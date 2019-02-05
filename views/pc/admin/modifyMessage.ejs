@@ -23,23 +23,23 @@
             <div class="a-item cl">
                 <div class="pfl a-item-sign">Email</div>
                 <div class="pfl a-item-con">
-                    <input type="text" placeholder="邮箱"  readonly="readonly" id="message-email" class="a-item-input" value="<%= message.email %>">
+                    <input type="text" placeholder="Email"  readonly="readonly" id="message-email" class="a-item-input" value="<%= message.email %>">
                 </div>
             </div>
             <div class="a-item cl">
-                <div class="pfl a-item-sign">内容</div>
+                <div class="pfl a-item-sign">Contents</div>
                 <div class="pfl a-item-con">
                     <textarea class="messagecon" id="message-comment" readonly="readonly"><%= message.comment %></textarea>
                 </div>
             </div>
             <div class="a-item cl">
-                <div class="pfl a-item-sign">回复</div>
+                <div class="pfl a-item-sign">Reply</div>
                 <div class="pfl a-item-con">
                     <textarea id="message-reply" class="messagecon"></textarea>
                 </div>
             </div>
             <div class="a-item-submit">
-                <button type="button" id="submitMessage" class="ui-button">提交</button>
+                <button type="button" id="submitMessage" class="ui-button">Submit</button>
             </div>
         </div>
     </div>
@@ -71,7 +71,7 @@
                 }
             }).catch(function () {
                 $.closeLoading();
-                alert("服务器错误，请稍后重试")
+                alert("Server error, please try later!")
             })
         })
     });
