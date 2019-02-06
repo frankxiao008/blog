@@ -12,11 +12,17 @@ const bodyParser = require('body-parser');
 mongoose.Promise = global.Promise;
 //const favicon = require('express-favicon');
 let checkMobile = require('./controller/checkMobile');
+const initAdmin = require('./operator/admin');
 
 
 let app = express();
 app.use(bodyParser.json({limit: '1mb'}));
 app.use(bodyParser.urlencoded({ extended: true, limit: '1mb' }));
+
+//initialize the admin
+function onHttpStart(){
+    initAdmin.initadmin();
+}
 
 
 app.use(cookieParser(cfg.session.secret));
@@ -74,4 +80,4 @@ let server = http.createServer(app);
 //     console.log(`Server started at port: ${PORT}`);
 // });
 
-server.listen(process.env.PORT || 3000 );
+server.listen(process.env.PORT || 3000, onHttpStart );
